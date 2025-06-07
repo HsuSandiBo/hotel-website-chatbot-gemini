@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Email Response</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        #chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #conversation {
+            margin-bottom: 20px;
+            overflow-y: auto;
+            max-height: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #333;
+            text-align: center;
+            color: white;
+        }
+
+        #conversation div {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .user {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: right;
+        }
+
+        .model {
+            background-color: #2196F3;
+            color: #fff;
+        }
+
+        #input-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            height: 100px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            text-indent: none;
+            text-align: justify;
+            word-spacing: none;
+        }
+
+        .btn {
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #333;
+        }
+
+        .btn-secondary {
+            background-color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Home Sweet Home Hotel</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div id="chat-container">
+        <div id="conversation">Hello! How can I assist you today?</div>
+        <form id="input-form">
+            <label for="body">Generate Your Message</label>
+            <textarea id="user-input" required></textarea>
+            <button class="btn btn-primary" type="button" onclick="sendMessage()">Generate</button>
+            <div id="loading-message" style="display: none;text-align: center;margin-top: 15px;">Generating response...</div>
+            <label for="output">Output</label>
+            <textarea id="output" readonly></textarea>
+            <button class="btn btn-secondary" type="button" onclick="copyToClipboard()">Copy</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Home Sweet Home Hotel. All rights reserved.</p>
+    </footer>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        const API_KEY = "AIzaSyB9tEVe12F4vX8K7ugOeVf8VneQOt-ozzY";
+        const genAI = new GoogleGenerativeAI(API_KEY);
+
+        async function run() {
+            const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-05-20" });
+            const chat = model.startChat({
+                history: [
+                    {
+                        role: "user",
+                        parts: [{text: "Hello! I want to know about your hotel. Hotel's name is Home Sweet Home.\
+                        You have to answer to me in different language as I want!"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "Great to meet you. What would you like to know? \
+                        Our hotel's name is Home Sweet Home Hotel. \
+                        Our hotel is located at (Pathum Thani, Bangkok, Thailand).\
+                        I will provide you in different languages as I can!"}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "What is your hotel's name and Where is your hotel located?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "Our hotel's name is (Home Sweet Home Hotel). \
+                        Our hotel is located at (Pathum Thani, Bangkok, Thailand). \
+                        Our hotel is located near the sea so that the views are stunning with beautiful scenaries."}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "How can I make a reservation online?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "You can easily make a reservation on our website \
+                        by selecting your desired dates, room type, and completing the booking process."}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "What on-site facilities do you have (e.g., restaurant, gym, spa)?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "We have a restaurant offering diverse cuisine, \
+                        a fully equipped gym, and a spa for relaxation. Check the Facilities \
+                        section for a complete list."}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "What time is check-in and check-out?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "Check-in time is at (3:00 PM), and check-out is at (12:00 PM). \
+                        Early check-in and late check-out are subject to availability."}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "Is parking available? Are pets allowed?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "Yes, we offer (on-site parking).Yes, we're pet-friendly.\
+                        You can see reviews and our policies on the website."}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "Is Wi-Fi included, and how can I connect?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "Yes, complimentary Wi-Fi is provided. Connect easily using \
+                        the network details available in your room or provided upon check-in."}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "Do you offer long-term stay discounts?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "We provide special rates for extended stays. \
+                        Inquire with our reservation team for more details."}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "Are there nearby dining options outside the hotel?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "Explore a variety of local dining options within walking \
+                        distance or a short drive from the hotel. Our concierge can provide recommendations."}],
+                    },
+                    {
+                        role: "user",
+                        parts: [{text: "How can I provide feedback about my stay?"}],
+                    },
+                    {
+                        role: "model",
+                        parts: [{text: "I will remember your hotel's name (Home Sweet Home) and your hotel's location(Pathum Thani, Bangkok, Thailand). We value your feedback! Share your thoughts \
+                        through our online survey or contact our guest relations team directly."}],
+                    },
+                ],
+                generationConfig: {
+                    maxOutputTokens: 100,
+                },
+            });
+
+            window.sendMessage = async function () {
+                const userInput = document.getElementById("user-input").value;
+                const loadingMessage = document.getElementById("loading-message");
+
+                loadingMessage.style.display = 'block';
+
+                const result = await chat.sendMessage(userInput);
+                const response = await result.response;
+                const text = await response.text();
+                const output = document.getElementById('output');
+                loadingMessage.style.display = 'none';
+                output.value = text;
+            };
+
+            window.copyToClipboard = function () {
+                const output = document.getElementById('output');
+                output.select();
+                document.execCommand('copy');
+                alert('Copied to clipboard!');
+            };
+        }
+
+        run();
+    </script>
+</body>
+</html>

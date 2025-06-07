@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Home Sweet Home Hotel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+            text-align: center; /* Center the content */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        img.full-width {
+            width: 100%;
+            max-width: 800px; 
+            height: auto;
+            border-radius: 8px;
+            margin: 0 auto; 
+            display: block; 
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px;
+            text-align: left;
+        }
+
+        .grid-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item img {
+            width: 100%; 
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Home Sweet Home Hotel</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About Us</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="chat.html">Chat with Us</a>
+    </nav>
+
+    <section>
+        <h2>Welcome to Home Sweet Home Hotel</h2>
+
+        <img src="images/hotel_exterior.png" alt="Hotel Exterior" class="full-width"><br>
+        <p style="font-size: large; font-weight: bold;">Welcome to Home Sweet Home Hotel, where luxury meets comfort. Our hotel is a haven of tranquility in the heart of the city, providing a delightful escape for both business and leisure travelers.</p>
+
+        <p style="font-size: large; font-weight: bold;">At Home Sweet Home, we are dedicated to delivering an exceptional experience that goes beyond expectations. Here's what makes us unique:</p><br>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="images/view-room.jpg" alt="Luxury Room">
+                <h3>Luxury Accommodations</h3>
+                <p>Indulge in our thoughtfully designed rooms and suites, each offering a perfect blend of sophistication and modern amenities.</p>
+            </div>
+
+            <div class="grid-item">
+                <img src="images/restaurant.jpg" alt="Restaurant">
+                <h3>Exquisite Dining</h3>
+                <p>Experience culinary delights in our world-class restaurant, where flavors and ambiance come together to create a memorable dining experience.</p>
+            </div>
+
+            <div class="grid-item">
+                <img src="images/spa.jpg" alt="Spa">
+                <h3>Wellness and Relaxation</h3>
+                <p>Rejuvenate your senses at our spa, equipped to provide a range of treatments for your complete well-being and relaxation.</p>
+            </div>
+
+            <div class="grid-item">
+                <img src="images/meeting-room.jpeg" alt="Meeting Room">
+                <h3>State-of-the-Art Facilities</h3>
+                <p>Stay active in our modern gym and take advantage of our versatile event spaces for meetings and celebrations.</p>
+            </div>
+        </div><br>
+
+        <img src="images/lobby.png" alt="Hotel Lobby" class="full-width">
+        <p style="font-size: large;font-weight: bold;">Thank you for choosing Home Sweet Home Hotel. We look forward to providing you with an unforgettable experience that will leave you with cherished memories.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Home Sweet Home Hotel. All rights reserved.</p>
+    </footer>
+</body>
+</html>

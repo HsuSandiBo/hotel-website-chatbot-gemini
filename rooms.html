@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms - Home Sweet Home Hotel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .room-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .room-card {
+            flex: 0 1 30%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .room-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .room-details {
+            padding: 15px;
+        }
+
+        .room-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .room-description {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .room-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Home Sweet Home Hotel</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="#">Rooms</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="chat.html">Chat with Us</a>
+    </nav>
+
+    <section>
+        <h2 style="text-align: center;">Our Rooms</h2>
+
+        <div class="room-container">
+            <div class="room-card">
+                <img src="images/standard-room.jpg" alt="Standard Room">
+                <div class="room-details">
+                    <div class="room-title">Standard Room</div>
+                    <div class="room-description">Comfortable and stylish standard rooms for a relaxing stay.</div>
+                    <div class="room-price">&#3647;1500 per night</div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <img src="images/deluxe-room.jpg" alt="Deluxe Room">
+                <div class="room-details">
+                    <div class="room-title">Deluxe Room</div>
+                    <div class="room-description">Indulge in the elegance of our deluxe rooms with breathtaking views.</div>
+                    <div class="room-price">&#3647;2000 per night</div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <img src="images/family-room.jpg" alt="Family Room">
+                <div class="room-details">
+                    <div class="room-title">Family Room</div>
+                    <div class="room-description">Enjoy quality family time in a room that feels like a home away from home.</div>
+                    <div class="room-price">&#3647;5000 per night</div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <img src="images/view-room.jpg" alt="Ocean View Room">
+                <div class="room-details">
+                    <div class="room-title">Ocean View Room</div>
+                    <div class="room-description">Wake up to the soothing sound of waves and panoramic views of the ocean.</div>
+                    <div class="room-price">&#3647;5500 per night</div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <img src="images/pet-friendly-room.jpg" alt="Pet-friendly Room">
+                <div class="room-details">
+                    <div class="room-title">Pet-friendly Room</div>
+                    <div class="room-description">Experience a welcoming and accommodating environment for both guests and pets.</div>
+                    <div class="room-price">&#3647;7500 per night</div>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <img src="images/suite-room.jpg" alt="Suite">
+                <div class="room-details">
+                    <div class="room-title">Suite</div>
+                    <div class="room-description">Experience luxury in our spacious suites with top-notch amenities.</div>
+                    <div class="room-price">&#3647;8000 per night</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Home Sweet Home Hotel. All rights reserved.</p>
+    </footer>
+</body>
+</html>

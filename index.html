@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Sweet Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        #home {
+            background: url('images/home.jpg') center/cover no-repeat;
+        }
+
+        #about {
+            background: url('images/hotel.jpg') center/cover no-repeat;
+        }
+
+        #rooms {
+            background: url('images/room.jpg') center/cover no-repeat;
+        }
+
+        #blog {
+            background: url('images/blog.jpg') center/cover no-repeat;
+        }
+
+        #contact {
+            background: url('images/reception.jpg') center/cover no-repeat;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .overlay h2{
+            font-size: 30px;
+            margin: 0;
+        }
+        .overlay p {
+            margin-top: 50px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Home Sweet Home</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="chat.html">Chat with Us</a>
+    </nav>
+
+    <section id="home">
+        <div class="overlay">
+            <h2>Welcome to Our Luxurious Home</h2>
+            <p>Relax and unwind in the perfect setting. Discover comfort, style, and a home away from home. Let us make your stay unforgettable.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="overlay">
+            <h2>Who We Are</h2>
+            <p>We believe in providing an extraordinary experience. Our home is designed for comfort, style, and making every moment special. Come and see the difference we offer.</p>
+        </div>
+    </section>
+
+    <section id="rooms">
+        <div class="overlay">
+            <h2>Explore Our Rooms</h2>
+            <p>Our rooms are designed to suit every need. From cozy corners to spacious retreats, each room offers comfort and stunning views. Explore your perfect stay.</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="overlay">
+            <h2>Our Blogs</h2>
+            <p>Stay up-to-date with our latest tips, stories, and exciting travel inspiration. Whether you’re looking for advice or just want to dream, our blog has something for everyone.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="overlay">
+            <h2>Let’s Connect</h2>
+            <p>Have questions or ready to book your stay? Reach out to our team today, and we’ll help you plan the perfect experience.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Home Sweet Home. All rights reserved.</p>
+    </footer>
+</body>
+</html>

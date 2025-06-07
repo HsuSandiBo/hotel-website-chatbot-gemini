@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Home Sweet Home Hotel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            position: relative;
+            padding: 60px 0;
+            text-align: center;
+            color: black;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-details {
+            text-align: center;
+            margin-bottom: 50px;
+            background-image: url('images/home.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contact-details h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .contact-details p {
+            color: white;
+            font-size: large;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+        }
+
+        .map-container {
+            margin-top: 30px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: white;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Home Sweet Home Hotel</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="blog.html">Blog</a>
+        <a href="#">Contact</a>
+        <a href="chat.html">Chat with Us</a>
+    </nav>
+
+    <section>
+        <div class="contact-container">
+            <div style="background-color: #333;">
+                <form>
+                    <h1 style="color: white;">Reservation Form</h1>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="check-in-date">Check-in Date</label>
+                    <input type="date" id="check-in-date" name="check-in-date" required>
+                
+                    <label for="check-out-date">Check-out Date</label>
+                    <input type="date" id="check-out-date" name="check-out-date" required>
+                    
+                    <label for="room-type">Room Type</label>
+                    <select id="room-type" name="room-type" required>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="suite">Suite</option>
+                        <option value="standard">Standard Room</option>
+                        <option value="family">Family Room</option>
+                        <option value="view">Ocean View Room</option>
+                        <option value="pet-friendly">Pet-friendly Room</option>
+                    </select>
+                
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+                    
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+                    
+                    <label for="phone">Your Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                
+                    <button type="submit">Book Now</button>
+                </form>
+            </div>
+            <div class="contact-details">
+                <h2>Contact Us</h2>
+                <p>Home Sweet Home Hotel</p>
+                <p>123 Tran+123 456 789</p>
+                <p>Business Hours:</p>
+                <p>Monday quil Street</p>
+                <p>Cityville, Country</p>
+                <p>Email: info@homesweethomehotel.com</p>
+                <p>Phone: - Friday: 9 AM - 7 PM</p>
+                <p>Saturday - Sunday: 10 AM - 5 PM</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.812223343882!2d<15.8>!3d<12.6>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z<YOUR-LATITUDE>!<YOUR-LONGITUDE>!5e0!3m2!1sen!2sus!4v1646036115977!5m2!1sen!2sus" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Home Sweet Home Hotel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
